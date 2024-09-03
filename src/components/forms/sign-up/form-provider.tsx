@@ -13,7 +13,7 @@ const SignUpFormProvider = ({children}:Props) => {
   const {methods,onHandleSubmit,onGenerateOTP,loading}=useSignUpForm()
   return (
    <AuthContextProvider>
-    <FormProvider {...methods} >
+    <FormProvider {...methods}  >
         <form onSubmit={onHandleSubmit} className='h-full'>
             <div className="flex flex-col justify-between gap-3 h-full">
               <Loader loading={loading}>{children}</Loader>

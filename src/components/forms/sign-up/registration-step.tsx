@@ -5,12 +5,14 @@ import { useFormContext } from "react-hook-form";
 import TypeSelection from "./type-selection-form";
 import dynamic from "next/dynamic";
 import { Spinner } from "@/components/spinner";
+import OtpForm from "./otp-form";
 
 type Props = {};
 
+
 const DetailForm = dynamic(() => import("./account-details-form"), {
   ssr: false,
-  loading: Spinner,
+  loading: () => <Spinner />,
 });
 
 const RegistrationFormStep = (props: Props) => {
@@ -33,8 +35,8 @@ const RegistrationFormStep = (props: Props) => {
         />
       );
     case 2:
-      return <DetailForm />;
-    case 3:
+      return <DetailForm register={register} errors={errors} />;
+    case 3: return <OtpForm onOTP={onOTP} setOTP={setOnOTP} />
   }
   return <div>registration.-step</div>;
 };
