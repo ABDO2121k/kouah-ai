@@ -12,7 +12,7 @@ const Page = (props: Props) => {
       <InfoBar />
       <div className="overflow-y-auto w-full chat-window flex-1  flex flex-col gap-10 py-10 px-5">
         <BillingSettings />
-        <DarkModetoggle />
+        {/* <DarkModetoggle /> */}
         <ChangePassword />
       </div>
     </>

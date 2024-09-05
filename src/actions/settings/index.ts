@@ -150,7 +150,7 @@ export const onUpdatePassword = async (password: string) => {
     if (update) {
       return { status: 200, message: "Password updated" };
     }
-  } catch (error:any) {
+  } catch (error: any) {
     console.log({ error });
     return { status: 400, message: error?.errors[0].longMessage };
   }
@@ -226,6 +226,7 @@ export const onUpdateDomain = async (id: string, name: string) => {
         return {
           status: 200,
           message: "Domain updated",
+          name: domain?.name,
         };
       }
 
@@ -418,7 +419,10 @@ export const onGetAllHelpDeskQuestions = async (id: string) => {
   }
 };
 
-export const onCreateFilterQuestions = async (id: string, question: string) => {
+export const onCreateFilterQuestions = async (
+  id: string,
+  question: string,
+) => {
   try {
     const filterQuestion = await db.domain.update({
       where: {
