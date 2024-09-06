@@ -5,10 +5,10 @@ import { Copy } from 'lucide-react'
 import React from 'react'
 
 type Props = {
-  id: string
+  id: string,
+  host:string|undefined
 }
-
-const CodeSnippet = ({ id }: Props) => {
+const CodeSnippet = ({ id,host }: Props) => {
   let snippet = `
     const iframe = document.createElement("iframe");
     
@@ -27,16 +27,16 @@ const CodeSnippet = ({ id }: Props) => {
         }
     ')
     
-    iframe.src = "${process.env.HOST_N}/chatbot"
+    iframe.src = "${host}/chatbot"
     iframe.classList.add('chat-frame')
     document.body.appendChild(iframe)
     
     window.addEventListener("message", (e) => {
-        if(e.origin !== "${process.env.HOST_N}") return null
+        if(e.origin !== "${host}") return null
         let dimensions = JSON.parse(e.data)
         iframe.width = dimensions.width
         iframe.height = dimensions.height
-        iframe.contentWindow.postMessage("${id}", "${process.env.HOST_N}/")
+        iframe.contentWindow.postMessage("${id}", "${host}/")
     })
         `
 

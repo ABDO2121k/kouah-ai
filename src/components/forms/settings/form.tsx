@@ -38,13 +38,14 @@ const SettingsForm = ({ id, name, chatBot, plan }: Props) => {
     deleting,
     loading,
   } = useSettings(id);
+  const host = process.env.NEXT_PUBLIC_HOST_N;
   return (
     <form className="flex flex-col gap-8 pb-10" onSubmit={onUpdateSettings}>
       <div className="flex flex-col gap-3">
         <h2 className="font-bold text-2xl">Domain Settings</h2>
         <Separator orientation="horizontal" />
         <DomainUpdate name={name} register={register} errors={errors} />
-        <CodeSnippet id={id} />
+        <CodeSnippet id={id} host={host} />
       </div>
       <div className="flex flex-col gap-3 mt-5">
         <div className="flex gap-4 items-center">
