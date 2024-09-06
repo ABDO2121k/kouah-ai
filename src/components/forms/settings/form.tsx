@@ -39,6 +39,8 @@ const SettingsForm = ({ id, name, chatBot, plan }: Props) => {
     loading,
   } = useSettings(id);
   const host = process.env.NEXT_PUBLIC_HOST_N;
+
+  
   return (
     <form className="flex flex-col gap-8 pb-10" onSubmit={onUpdateSettings}>
       <div className="flex flex-col gap-3">
