@@ -228,11 +228,11 @@ export const onAiChatBotAssistant = async (
 
               if the customer says something out of context or inapporpriate. Simply say this is beyond you and you will get a real user to continue the conversation. And add a keyword (realtime) at the end.
 
-              if the customer agrees to book an appointment send them this link http://localhost:3000/portal/${id}/appointment/${
+              if the customer agrees to book an appointment send them this link ${process.env.HOST_N}/portal/${id}/appointment/${
                 checkCustomer?.customer[0].id
               }
 
-              if the customer wants to buy a product redirect them to the payment page http://localhost:3000/portal/${id}/payment/${
+              if the customer wants to buy a product redirect them to the payment page ${process.env.HOST_N}/portal/${id}/payment/${
                 checkCustomer?.customer[0].id
               }
           `,
@@ -247,7 +247,7 @@ export const onAiChatBotAssistant = async (
         })
 
         if (chatCompletion.choices[0].message.content?.includes('(realtime)')) {
-            console.log("aaaaaaaaaaa")
+            console.log()
           const realtime = await client.chatRoom.update({
             where: {
               id: checkCustomer?.customer[0].chatRoom[0].id,
