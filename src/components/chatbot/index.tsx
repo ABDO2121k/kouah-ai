@@ -24,7 +24,7 @@ const AiChatbot = (props: Props) => {
     errors,
   } = useChatBot();
   return (
-    <div className="h-screen bg-red-600 flex flex-col justify-end items-end">
+    <div className="h-screen flex flex-col justify-end items-end">
       {botOpened && (
         <BotWindow
           errors={errors}
@@ -36,7 +36,8 @@ const AiChatbot = (props: Props) => {
           help={currentBot?.chatBot?.helpdesk}
           theme={currentBot?.chatBot?.background}
           textColor={currentBot?.chatBot?.textColor}
-          chats={onChats}
+          chats={onChats} 
+        
           register={register}
           onChat={onStartChatting}
           onResponding={onAiTyping}
