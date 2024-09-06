@@ -37,7 +37,6 @@ const AiChatbot = (props: Props) => {
           theme={currentBot?.chatBot?.background}
           textColor={currentBot?.chatBot?.textColor}
           chats={onChats} 
-        
           register={register}
           onChat={onStartChatting}
           onResponding={onAiTyping}
