@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { Inter,Plus_Jakarta_Sans } from "next/font/google";// anbdlo had font
+import { Inter, Plus_Jakarta_Sans } from "next/font/google"; // anbdlo had font
 
 import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { Toaster } from "@/components/ui/toaster";
 import { ThemeProvider } from "@/context/theme-provider";
+import { TooltipProvider } from "@/components/ui/tooltip";
 
 const jakarta = Plus_Jakarta_Sans({ subsets: ["latin"] });
 
@@ -22,16 +23,18 @@ export default function RootLayout({
     <ClerkProvider>
       <html lang="en">
         <body className={jakarta.className}>
-        <ThemeProvider
+          <ThemeProvider
             attribute="class"
             defaultTheme="system"
             enableSystem
             disableTransitionOnChange
           >
-          <Toaster/>
-          {children}
+            <TooltipProvider>
+              <Toaster />
+              {children}
+            </TooltipProvider>
           </ThemeProvider>
-          </body>
+        </body>
       </html>
     </ClerkProvider>
   );

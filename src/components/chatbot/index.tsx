@@ -3,8 +3,9 @@ import { useChatBot } from "@/hooks/chatbot/use-chatbot";
 import { cn } from "@/lib/utils";
 import React from "react";
 import Image from "next/image";
-import { BotIcon, ShieldCloseIcon, X } from "lucide-react";
+import {X } from "lucide-react";
 import { BotWindow } from "./window";
+import { BotIcon } from "@/icons/bot-icon";
 
 type Props = {};
 
@@ -44,7 +45,7 @@ const AiChatbot = (props: Props) => {
       )}
       <div
         className={cn(
-          "rounded-full relative cursor-pointer shadow-md w-[3rem] h-[3rem] flex items-center justify-center bg-grandis",
+          "rounded-full relative cursor-pointer shadow-md w-15 h-15 p-3 flex items-center justify-center bg-grandis",
           loading ? "invisible" : "visible"
         )}
         onClick={onOpenChatBot}
@@ -60,7 +61,7 @@ const AiChatbot = (props: Props) => {
             <BotIcon />
           )
         ) : (
-          <X />
+          <X height={47} width={47} className={"animate-spin-2 text-white"}/>
         )}
       </div>
     </div>

@@ -2,7 +2,7 @@
 
 import { USER_LOGIN_FORM } from "@/costants/forms";
 import React from "react";
-import { FieldErrors, FieldValues, useFormContext, UseFormRegister } from "react-hook-form";
+import { FieldErrors, FieldValues, useFormContext } from "react-hook-form";
 import FormGenerator from "../form-generator";
 
 type Props = {

@@ -124,7 +124,8 @@ const config = {
   			'caret-blink': 'caret-blink 1.25s ease-out infinite',
   			'open-sidebar': 'open-sidebar 0.2s ease-out',
   			'close-sidebar': 'close-sidebar 0.2s ease-out',
-  			'fade-in': 'fade-in 0.2s ease-out'
+  			'fade-in': 'fade-in 0.2s ease-out',
+			"spin-2":"spin 1s linear "
   		}
   	}
   },

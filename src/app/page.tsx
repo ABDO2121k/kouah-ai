@@ -1,3 +1,4 @@
+"use client"
 import NavBar from "@/components/Navbar";
 import { Button } from "@/components/ui/button";
 import {
@@ -13,9 +14,21 @@ import { cn } from "@/lib/utils";
 import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import {KouahAiBotEmbeddLocal} from '@kouahai/embed'
 
-const page = () => {
+const Page = () => {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  useEffect(() => {
+    if (isMounted) {
+      KouahAiBotEmbeddLocal('cm1lghktm0001br0k599pwsvf');
+    }
+  }, [isMounted]);
   return (
     <main>
       <NavBar />
@@ -128,4 +141,4 @@ const page = () => {
   );
 };
 
-export default page;
+export default Page;
