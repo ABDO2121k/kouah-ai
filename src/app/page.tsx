@@ -15,7 +15,7 @@ import { Check } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import React, { useEffect, useState } from "react";
-import {KouahAiBotEmbeddLocal} from '@kouahai/embed'
+import {KouahAiBotEmbedd} from '@kouahai/embed'
 
 const Page = () => {
   const [isMounted, setIsMounted] = useState(false);
@@ -26,7 +26,7 @@ const Page = () => {
 
   useEffect(() => {
     if (isMounted) {
-      KouahAiBotEmbeddLocal('cm1lghktm0001br0k599pwsvf');
+      KouahAiBotEmbedd('cm1lghktm0001br0k599pwsvf');
     }
   }, [isMounted]);
   return (
